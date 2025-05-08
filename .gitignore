@@ -41,9 +41,3 @@ yarn-debug.log*
 
 # Ignore db test files.
 db/test.*
-
-# Ignore editor files.
-.editorconfig
-
-# Ignore .gitattributes
-.gitattributes
