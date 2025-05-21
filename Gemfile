@@ -8,6 +8,21 @@ gem 'pry-rails'
 gem 'concurrent-ruby', '1.3.4'
 
 gem 'bootstrap-sass', '3.4.1'
+
+gem 'faker', '~> 3.5', '>= 3.5.1'
+
+gem 'will_paginate', '3.3.0'
+
+gem 'bootstrap-will_paginate', '1.0.0'
+
+gem 'figaro'
+
+gem 'active_storage_validations', '~> 1.4'
+
+gem 'image_processing', '~> 1.13'
+
+gem 'mini_magick', '~> 5.0', '>= 5.0.1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.10'
 # Use sqlite3 as the database for Active Record

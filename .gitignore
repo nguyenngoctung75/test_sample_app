@@ -47,3 +47,5 @@ db/test.*
 
 # Ignore .gitattributes
 .gitattributes
+
+config/application.yml
