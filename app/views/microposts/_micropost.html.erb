@@ -11,7 +11,17 @@
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
     <% if current_user?(micropost.user) %>
       <%= link_to 'delete', micropost, method: :delete,
-                                      data: { confirm: 'You sure?' } %>
+                                       data: { confirm: 'You sure?' } %>
     <% end %>
   </span>
+  <%= turbo_stream_from micropost, :comments %>
+  <%= tag.div id: "#{dom_id(micropost)}_comments" do %>
+    <h3 class='comments'><%= micropost.comments.count %> Comments</h3>
+    <% micropost.comments.each do |comment| %>
+      <%= render 'comments/comment', comment: comment %>
+    <% end %>
+  <% end %>
+  <% if logged_in? %>
+    <%= render partial: 'comments/form', locals: {comment: micropost.comments.build, micropost: micropost } %>
+  <% end %>
 </li>

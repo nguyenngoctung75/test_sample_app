@@ -23,6 +23,14 @@ gem 'image_processing', '~> 1.13'
 
 gem 'mini_magick', '~> 5.0', '>= 5.0.1'
 
+gem 'devise'
+
+gem 'cancancan'
+
+gem 'config'
+
+gem 'turbo-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.10'
 # Use sqlite3 as the database for Active Record

@@ -1,4 +1,3 @@
-//DOMContentLoaded hoac turbolinks:load
 document.addEventListener('DOMContentLoaded', () => {
   const micropostImage = document.getElementById('micropost_image')
 

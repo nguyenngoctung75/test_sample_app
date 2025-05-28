@@ -12,9 +12,8 @@ class MicropostsController < ApplicationController
       redirect_to root_url
     else
       @feed_items = current_user.feed.paginate(page: params[:page])
-      #@feed_items ||= current_user.feed.paginate(page: params[:page], per_page: 10) #Khong the thiet lap 10 bai viet per page
+
       render 'static_pages/home'
-      #redirect_to root_url #Khong ban ra loi neu nhap sai gia tri
     end
   end
 
@@ -23,8 +22,6 @@ class MicropostsController < ApplicationController
     flash[:success] = 'Micropost deleted'
 
     redirect_back(fallback_location: root_url)
-    # redirect_to request.referrer || root_url
-    #request.referrer: URL request truoc do
   end
 
   private
@@ -35,7 +32,7 @@ class MicropostsController < ApplicationController
 
   def correct_user
     @micropost = current_user.microposts.find_by(id: params[:id])
-    
+
     redirect_to root_url if @micropost.nil?
   end
 end

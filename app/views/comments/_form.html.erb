@@ -1,0 +1,11 @@
+<% model = [local_assigns[:micropost], comment].compact %>
+
+<%= form_with model: model,
+    id: dom_id_for_records(*model) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class='field'>
+    <%= f.text_area :content, placeholder: 'add comment...' %>
+  </div>
+  <%= f.submit class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', comment, class: 'btn btn-link' if f.object.persisted? %>
+<% end %>

@@ -316,3 +316,19 @@ span.image {
 .users.follow {
   padding: 0;
 }
+
+.comments {
+  font-size: 14px;
+  padding-left: 650px;
+}
+
+.comment-content {
+  border-radius: 4px;
+  border: #000 solid 1px;
+  margin-bottom: 12px;
+}
+
+.comment-time {
+  color: $gray-light;
+  font-size: 10px;
+}

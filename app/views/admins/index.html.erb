@@ -1,0 +1,22 @@
+<% provide(:title, 'Admin Profile') %>
+<h1>Name: <%= @admin.username %></h1>
+<h1>Email: <%= @admin.email %></h1>
+
+<h1>All Users</h1>
+
+<%= will_paginate @users %>
+
+<ul class='users'>
+  <% @users.each do |user| %>
+    <li>
+      <%= gravatar_for user, size: 50 %>
+      <%= link_to user.name, user%>
+      <% if can? :destroy, user %>
+        | <%= link_to 'delete', user, method: :delete, data: { confirm: 'You sure?'} %>
+      <% end %>
+      | <%= link_to 'edit', admin_edit_user_path(user) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate @users %>

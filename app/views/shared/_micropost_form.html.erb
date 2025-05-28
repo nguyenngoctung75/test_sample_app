@@ -19,7 +19,6 @@
   })
 </script> %>
 
-<% content_for :micropost_form_js do %>
+<% content_for :javascript_content do %>
   <%= javascript_include_tag :micropost_form %>
 <% end %>
-<%= yield :micropost_form_js %>

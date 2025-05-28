@@ -1,8 +1,6 @@
 module SessionsHelper
   def log_in(user)
-    # Sau khi dang nhap thanh cong, luu id cua user vao session
-    # Luc nay session chi chua id cua user khong chua gi khac
-    session[:user_id] = user.id #sessions = { :user_id => user.id }
+    session[:user_id] = user.id
   end
 
   def remember(user)
@@ -17,8 +15,6 @@ module SessionsHelper
     elsif (user_id = cookies.encrypted[:user_id])
       user = User.find_by(id: user_id)
 
-      #user.try(:authenticated?, cookies[:remember_token])
-      #user && user.authenticated?(cookies[:remember_token])
       if user&.authenticated?(:remember, cookies[:remember_token])
         log_in user
         @current_user = user

@@ -1,6 +1,8 @@
 <% provide(:title, 'Home') %>
 <% if logged_in? %>
   <%= render 'static_pages/microposts' %>
+<% elsif admin_signed_in? %>
+  <h1>Admin name: <%= current_admin.username %></h1>
 <% else %>
   <%= render 'welcome' %>
 <% end %>

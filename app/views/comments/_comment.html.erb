@@ -1,0 +1,19 @@
+<%= turbo_stream_from comment %>
+<%= turbo_frame_tag comment do %>
+  <div class='comment'>
+    <div class='comment-content'>
+      <p class='comment-gravatar'>
+        <%= link_to gravatar_for(comment.user, size: 35), comment.user %>
+      </p>
+      <p class='comment-name'><%= comment.user.name %></p>
+      <p class='comment-content'><%= comment.content %></p>
+      <p class='comment-time'><%= time_ago_in_words(comment.created_at) %> ago</p>
+    </div>
+  </div>
+  <% if current_user && current_user == comment.user %>
+    <div class='d-flex'>
+      <%= link_to 'edit', edit_micropost_comment_path(comment.micropost, comment) %>
+      <%= link_to 'delete', [comment.micropost, comment], data: { turbo_method: :delete, confirm: 'You sure?' } %>
+    </div>
+  <% end %>
+<% end %>
